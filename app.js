@@ -155,7 +155,7 @@ facebook_form.onsubmit = (e) => {
     // required field
     first_name.value == '' ? name_req.innerHTML = `<span style="color: red;">* Required</span>` : name_req.innerHTML = ``;
 
-    last_name.value == '' ? last_req.innerHTML = `<span style="color: red;">* Required</span>` : name_req.innerHTML = ``;
+    last_name.value == '' ? last_req.innerHTML = `<span style="color: red;">* Required</span>` : last_req.innerHTML = ``;
 
     phone.value == '' ? email_req.innerHTML = `<span style="color: red;">* Required</span>` : email_req.innerHTML = ``;
 
@@ -175,7 +175,7 @@ facebook_form.onsubmit = (e) => {
     }else{
 
         msg.innerHTML = msgAlert('Signup Successful. Thank you', 'success');
-        
+
     }
 
 }
