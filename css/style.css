@@ -1,0 +1,51 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+        
+*{
+    padding: 0;
+    margin: 0;
+    font-family: Poppins, sans-serif;
+}
+.warning-icon{
+    position: relative;
+}
+.warning-icon .box{
+    height: 18px;
+    width: 18px;
+    background: red;
+    display: none;
+    text-align: center;
+    color: #fff;
+    line-height: 18px;
+    border-radius: 50%;
+    font-weight: bold;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+}
+
+.tooltipp {
+	background: red;
+	padding: 5px 10px;
+	border-radius: 3px;
+	font-size: 11px;
+	color: #fff;
+	position: absolute;
+	right: 0;
+    top: 120%;
+    display: none;
+    z-index: 9999;
+}
+.tooltipp::before {
+	content: "";
+	height: 0;
+	width: 0;
+	display: block;
+	position: absolute;
+	bottom: 100%;
+	left: 75%;
+	border-style: solid;
+	border-color: transparent transparent red transparent;
+    border-width: 0px 7px 7px 7px;
+}
