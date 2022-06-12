@@ -8,6 +8,9 @@ const password = facebook_form.querySelector('input[name="password"]');
 const gender = facebook_form.querySelectorAll('input[name="gender"]');
 const submit = facebook_form.querySelector('button[type="submit"]');
 
+
+
+
 // warning boxes
 const warning = facebook_form.querySelector('.warning-icon .box1 ');
 const warning2 = facebook_form.querySelector('.warning-icon .box2 ');
@@ -145,12 +148,24 @@ const last_req = document.querySelector('.last-name .required');
 const email_req = document.querySelector('.mail .required');
 const pass_req = document.querySelector('.password .required');
 const birth_req = document.querySelector('.birth-date .required');
+const gender_req = document.querySelector('.gender .required');
 
 const msg = document.querySelector('.msg');
+
 
 facebook_form.onsubmit = (e) => {
     
     e.preventDefault();
+
+    // gender value get
+    let gender_value = '';
+    gender.forEach(item =>{
+
+        if (item.checked){
+            gender_value = item.value;
+        }
+        
+    })
 
     // required field
     first_name.value == '' ? name_req.innerHTML = `<span style="color: red;">* Required</span>` : name_req.innerHTML = ``;
@@ -163,7 +178,12 @@ facebook_form.onsubmit = (e) => {
 
     (day.value == '' || month.value == '' || years.value == '' ) ? birth_req.innerHTML = `<span style="color: red;">* Required</span>` : birth_req.innerHTML = ``;
 
-    if ( first_name.value == '' || last_name.value == '' || phone.value == '' || password.value == '' || day.value == '' || month.value == '' || years.value == '' ) {
+
+    gender_value == '' ? gender_req.innerHTML = `<span style="color: red;">* Required</span>` : gender_req.innerHTML = ``;
+
+
+
+    if ( first_name.value == '' || last_name.value == '' || phone.value == '' || password.value == '' || day.value == '' || month.value == '' || years.value == '' || gender_value == '') {
 
         msg.innerHTML = msgAlert('All fields are required');
 
@@ -178,5 +198,7 @@ facebook_form.onsubmit = (e) => {
 
     }
 
+
 }
+
 
